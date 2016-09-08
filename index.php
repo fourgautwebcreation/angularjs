@@ -8,6 +8,8 @@
 
  <body>
   <section>
+
+   <!-- Deux controleurs avec le même nom de variable count -->
    <div ng-controller="augmenterCount">
     <input type="button" ng-click="countmore()" value="Augmenter le chiffre" />
     <span>{{count}}</span>
@@ -18,6 +20,13 @@
     <input type="button" ng-click="countless()" value="Baisser le chiffre" />
     <span>{{count}}</span>
     <p>{{description}}</p>
+   </div>
+
+   <!-- REST-->
+   <div ng-controller="membres">
+    <p ng-repeat="membre in membres">
+     {{membre.prenom}} {{membre.nom}}
+    </p>
    </div>
 
   </section>

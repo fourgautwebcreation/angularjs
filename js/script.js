@@ -2,7 +2,7 @@
 
 var test = angular.module('test',
     [
-    'augmenterCount','baisserCount'
+    'augmenterCount','baisserCount','membres'
    ]
   );
 
@@ -31,5 +31,19 @@ baisserCount.controller('baisserCount', ['$scope',
         {
          $scope.count = $scope.count-1;
         };
+    }
+]);
+
+/* REST */
+
+var membres = angular.module('membres',[]);
+membres.controller('membres', ['$scope','$http',
+    function ($scope,$http) {
+        $scope.membres = [];
+        $http.get("/resources/members.php")
+              .success(function(data)
+              {
+                $scope.membres = data;
+              });
     }
 ]);
